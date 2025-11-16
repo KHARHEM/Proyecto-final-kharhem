@@ -1,0 +1,184 @@
+<%- include('templates/head', { title: title, section: section }) %>
+
+    <!-- SECCIÓN INICIO - Hero Section con Carrusel -->
+    <section id="hero" class="hero-section hero-carousel">
+        <!-- Contenedor de imágenes de fondo -->
+        <div class="hero-background-carousel">
+            <div class="hero-bg-slide active" style="background-image: url('/img/micrófono.jpg');" alt="Micrófonos en un escenario"></div>
+            <div class="hero-bg-slide" style="background-image: url('/img/portada_1.jpg');" alt="integrantes del grupo New Name"></div>
+            <div class="hero-bg-slide" style="background-image: url('/img/portada_2.jpg');" alt="fotografía del grupo New Name"></div>
+            <div class="hero-bg-slide" style="background-image: url('/img/portada_3ojos.jpg');" alt="vista de solo los ojos de los integrantes del grupo"></div>
+            <div class="hero-bg-slide" style="background-image: url('/img/portada_4.1.jpg');" alt="fotografía del grupo tipo colage"></div>
+            <div class="hero-bg-slide" style="background-image: url('/img/portada_4.jpg');" alt="fotografia tipo colage del grupo new name"></div>
+        </div>
+        
+        <!-- Contenido del hero -->
+        <div class="hero-content">
+            <h1 class="animate-fade-in">New Name</h1> <!-- Nombre de tu grupo -->
+            <h2 class="animate-fade-in delay-1">Armonía Vocal · Pasión en cada nota</h2>
+            <a href="/repertorio" class="btn primary-btn animate-fade-in delay-2">Escúchanos</a>
+        </div>
+        
+        <!-- Controles del carrusel -->
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="changeHeroSlide(-1)">❮</button>
+            <button class="carousel-btn next" onclick="changeHeroSlide(1)">❯</button>
+        </div>
+        
+        <!-- Indicadores de slide -->
+        <div class="carousel-indicators">
+            <span class="indicator active" onclick="goToHeroSlide(0)"></span>
+            <span class="indicator" onclick="goToHeroSlide(1)"></span>
+            <span class="indicator" onclick="goToHeroSlide(2)"></span>
+            <span class="indicator" onclick="goToHeroSlide(3)"></span>
+            <span class="indicator" onclick="goToHeroSlide(4)"></span>
+            <span class="indicator" onclick="goToHeroSlide(5)"></span>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section id="about-us" class="about-section common-section">
+        <div class="container">
+            <h2>SOBRE NOSOTROS</h2>
+            <div class="about-content">
+                <p>
+                    Somos New Name, un grupo vocal a cappella dedicado a explorar las profundidades de la voz humana. Fundado en 2022, nuestra misión es cautivar a las audiencias con arreglos innovadores y una interpretación emotiva que trasciende géneros. Desde clásicos intemporales hasta éxitos contemporáneos, cada nota que cantamos es un testimonio de nuestra pasión por la música y la conexión que creamos a través de ella.
+                </p>
+                <div class="image-gallery">
+                    <img src="/img/carlos_h.jpg" alt="Carlos Hernandez. Tenor" class="gallery-item">
+                    <img src="/img/carlos_p.jpg" alt="Carlos Padilla. Bajo" class="gallery-item">
+                    <img src="/img/Cristobal.jpg" alt="Cristobal. Tenor" class="gallery-item">
+                    <img src="/img/Jimmy.jpg" alt="Jimmy. Barito" class="gallery-item">
+                    <img src="/img/Luigi.jpg" alt="Luis Barrios. Barito" class="gallery-item">
+
+                </div>
+                <p>
+                    Hemos tenido el privilegio de presentarnos en diversos escenarios, desde prestigiosos festivales de música hasta eventos privados, siempre buscando dejar una impresión duradera. Creemos firmemente en el poder de la voz para inspirar, conmover y unir.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ESTADÍSTICAS / HITOS (Inspirado en tu imagen) -->
+    <section id="stats-section" class="stats-section common-section bg-red">
+        <div class="container grid-4">
+            <div class="stat-item">
+                <i class="fas fa-music"></i>
+                <div class="number" data-target="150">0</div>
+                <span>Canciones</span>
+                <p>¡Pídenos la que más te guste, nuestro repertorio es muy amplio!</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-heart"></i>
+                <div class="number" data-target="197">0</div>
+                <span>Eventos</span>
+                <p>En todos los eventos en los que hemos tocado hemos conseguido emocionar y hacer bailar.</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <div class="number" data-target="157">0</div>
+                <span>Meses tocando</span>
+                <p>Todos empezamos a estudiar música desde muy jóvenes y seguimos haciéndolo.</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="number" data-target="27">0</div>
+                <span>Ciudades</span>
+                <p>Hemos viajado a muchas ciudades y nos trasladaremos encantadas a la ciudad en la que celebres tu evento.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN TESTIMONIOS -->
+    <section id="testimonials" class="testimonials-section common-section bg-dark">
+        <div class="container">
+            <h2>¿QUÉ OPINAN DE NOSOTROS?</h2>
+            <div class="testimonial-carousel">
+                <% if (testimonios && testimonios.length > 0) { %>
+                    <% testimonios.forEach(testimonio => { %>
+                        <div class="testimonial-item">
+                            <p>"<%= testimonio.mensaje %>"</p>
+                            <h3><%= testimonio.nombre %></h3>
+                            <span class="source"><%= testimonio.fuente %></span>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <div class="testimonial-item">
+                        <p>"Una experiencia maravillosa, voces increíbles y repertorio muy variado."</p>
+                        <h3>Alicia</h3>
+                        <span class="source">Bodas.net</span>
+                    </div>
+                    <div class="testimonial-item">
+                        <p>"Su música llenó de alegría nuestro evento. ¡Profesionales y con un talento excepcional!"</p>
+                        <h3>Carlos</h3>
+                        <span class="source">Cliente Privado</span>
+                    </div>
+                <% } %>
+            </div>
+            <div class="carousel-nav">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOVEDADES DESTACADAS (Carrusel) -->
+    <section id="featured-news" class="featured-news-section common-section">
+        <div class="container">
+            <h2>ÚLTIMAS NOVEDADES</h2>
+            <div class="news-carousel">
+                <% if (novedadesDestacadas && novedadesDestacadas.length > 0) { %>
+                    <% novedadesDestacadas.forEach(novedad => { %>
+                        <div class="news-card">
+                            <img src="<%= novedad.imagen_url || '/img/placeholder_news.jpg' %>" alt="<%= novedad.titulo %>">
+                            <h3><%= novedad.titulo %></h3>
+                            <p><%= novedad.resumen %></p>
+                            <a href="/novedades/<%= novedad.id %>" class="btn secondary-btn">Leer más</a>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No hay novedades destacadas en este momento. ¡Pronto tendremos más noticias!</p>
+                <% } %>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contact-form" class="contact-section common-section">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h2>CONTACTO</h2>
+                <p>¿Deseas contratarnos, colaborar o simplemente saludar? Escríbenos y te responderemos pronto.</p>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Barcelona, España</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@newname.com</span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://open.spotify.com/" target="_blank"><i class="fab fa-spotify" alt="enlace a spotify"></i></a>
+                    <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f" alt="enlace a facebook"></i></a>
+                    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram" alt="enlace a instagram"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter" alt="enlace a twitter"></i></a>
+                    <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube" alt="enlace a youtube"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <form id="contactForm">
+                    <input type="text" name="nombre" placeholder="Nombre *" required>
+                    <input type="email" name="email" placeholder="Email *" required>
+                    <input type="tel" name="telefono" placeholder="Teléfono">
+                    <input type="text" name="asunto" placeholder="Asunto">
+                    <textarea name="mensaje" placeholder="Mensaje *" required></textarea>
+                    <button type="submit" class="btn primary-btn">Enviar</button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<%- include('templates/footer') %>

@@ -1,0 +1,56 @@
+<%- include('templates/head', { title: title, section: section }) %>
+
+    <section id="media-hero" class="hero-section small-hero" style="background-image: url('/img/media_banner.jpg');">
+        <div class="hero-content">
+            <h1>REPERTORIO</h1>
+            <p>Descubre nuestra música y presentaciones en vivo.</p>
+        </div>
+    </section>
+
+    <section id="audio-section" class="common-section">
+        <div class="container">
+            <h2><i class="fas fa-headphones-alt"></i> Audios</h2>
+            <div class="media-grid">
+                <% audios.forEach(audio => { %>
+                    <div class="media-card audio-player-card">
+                        <div class="player-header">
+                            <img src="<%= audio.cover %>" alt="<%= audio.title %> cover" class="audio-cover">
+                            <div class="audio-info">
+                                <h3><%= audio.title %></h3>
+                                <p><%= audio.artist %></p>
+                            </div>
+                        </div>
+                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="<%= audio.embedUrl %>"></iframe>
+                        <div class="player-controls">
+                            <!-- Estos controles serían para un reproductor personalizado, aquí usamos el embed de SoundCloud -->
+                            <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir</button>
+                            <a href="#" target="_blank" class="btn small-btn">Obtener single</a>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-section" class="common-section bg-dark">
+        <div class="container">
+            <h2><i class="fas fa-video"></i> Videos</h2>
+            <div class="media-grid">
+                <% videos.forEach(video => { %>
+                    <div class="media-card video-player-card">
+                        <h3><%= video.title %> - <%= video.artist %></h3>
+                        <div class="video-wrapper">
+                            <iframe width="560" height="315" src="<%= video.embedUrl %>" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="player-controls">
+                            <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir</button>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Puedes añadir secciones para partituras y videoclips siguiendo un patrón similar -->
+
+<%- include('templates/footer') %>

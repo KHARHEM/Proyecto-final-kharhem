@@ -1,0 +1,49 @@
+<%- include('templates/head', { title: title, section: section }) %>
+
+    <section id="blog-hero" class="hero-section small-hero" style="background-image: url('/img/blog_banner.jpg');">
+        <div class="hero-content">
+            <h1>NOVEDADES</h1>
+            <p>Mantente al día con nuestras últimas noticias y eventos.</p>
+        </div>
+    </section>
+
+    <section id="news-list" class="common-section">
+        <div class="container blog-grid">
+            <div class="main-content">
+                <% if (novedades && novedades.length > 0) { %>
+                    <% novedades.forEach(novedad => { %>
+                        <article class="news-item">
+                            <img src="<%= novedad.imagen_url || '/img/placeholder_news.jpg' %>" alt="<%= novedad.titulo %>">
+                            <div class="item-content">
+                                <h2><a href="/novedades/<%= novedad.id %>"><%= novedad.titulo %></a></h2>
+                                <div class="meta">
+                                    <span>Publicado por New Name | </span>
+                                    <span><%= new Date(novedad.fecha).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) %> | </span>
+                                    <span>Categoría: <%= novedad.categoria %></span>
+                                </div>
+                                <p><%= novedad.resumen %></p>
+                                <a href="/novedades/<%= novedad.id %>" class="btn secondary-btn small-btn">Leer más</a>
+                            </div>
+                        </article>
+                    <% }); %>
+                <% } else { %>
+                    <p>No hay novedades disponibles en este momento.</p>
+                <% } %>
+            </div>
+            <aside class="sidebar">
+                <h3>Últimas Novedades</h3>
+                <ul class="sidebar-list">
+                    <% if (novedades && novedades.length > 0) { %>
+                        <% novedades.slice(0, 5).forEach(novedad => { %>
+                            <li><a href="/novedades/<%= novedad.id %>"><%= novedad.titulo %></a></li>
+                        <% }); %>
+                    <% } else { %>
+                        <li>No hay novedades recientes.</li>
+                    <% } %>
+                </ul>
+                <!-- Puedes añadir más widgets aquí, como categorías, archivo, etc. -->
+            </aside>
+        </div>
+    </section>
+
+<%- include('templates/footer') %>

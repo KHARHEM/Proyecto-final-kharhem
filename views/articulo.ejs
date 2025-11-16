@@ -1,0 +1,26 @@
+<%- include('templates/head', { title: articulo.titulo, section: 'novedades' }) %>
+
+    <section id="article-hero" class="hero-section small-hero" style="background-image: url('<%= articulo.imagen_url || '/img/blog_banner.jpg' %>');">
+        <div class="hero-content">
+            <h1><%= articulo.titulo %></h1>
+            <div class="meta">
+                <span>Publicado por New Name | </span>
+                <span><%= new Date(articulo.fecha).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) %> | </span>
+                <span>Categoría: <%= articulo.categoria %></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="article-content" class="common-section article-page">
+        <div class="container">
+            <div class="article-body">
+                <p><%= articulo.contenido %></p>
+                <!-- Aquí podrías añadir más imágenes o videos si la estructura de 'contenido' lo permite -->
+            </div>
+            <div class="back-link">
+                <a href="/novedades" class="btn secondary-btn">← Volver a Novedades</a>
+            </div>
+        </div>
+    </section>
+
+<%- include('templates/footer') %>

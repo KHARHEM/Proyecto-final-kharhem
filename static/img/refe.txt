@@ -1,0 +1,15 @@
+Para que el diseño se vea bien, necesitarás algunas imágenes ensrc/static/img/. Si no tienes las tuyas, puedes usar estos como marcadores de posición:
+fondo_héroe.jpg: Una imagen de un grupo vocal o un escenario oscuro y dramático.
+rendimiento_grupo_1.jpg: Un grupo actuando.
+ensayo_de_grupo_1.jpg: Un grupo ensayando.
+foto_de_grupo_1.jpg: Una foto de estudio del
+micrófono_bg.jpg: Un micrófono o equipo de estudio difuminado
+banner_blog.jpg: Una imagen genérica para el banner del blog.
+media_banner.jpg: Una imagen genérica para el banner de multimedia.
+placeholder_news.jpg: Imagen genérica para artículos de noticias.
+hallelujah_cover.jpg: Carátula de álbum para Hallelujah.
+Bohemian Rhapsody Cover.jpg: Carátula del álbum para Bohemian Rhapsody.
+mary_did_you_know_cover.jpg: Carátula de álbum para Mary, ¿lo sabías?.
+portada_de_silencio.jpg: Carátula de álbum para Sound of Silence.
+favicon.ico: Un pequeño icono para la pestaña del navegador.
+Si necesitas ayuda par

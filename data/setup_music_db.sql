@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS acapella_db;
+CREATE USER IF NOT EXISTS 'music'@'localhost' IDENTIFIED BY 'music';
+GRANT SELECT, INSERT, UPDATE, DELETE ON acapella_db.* TO 'music'@'localhost';
+FLUSH PRIVILEGES;
