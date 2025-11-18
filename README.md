@@ -121,14 +121,13 @@ Area de administración a través del */admin*
 
 ## El sitio quedará accesible en:
 - 📍 http://localhost:3000
-- 🔒 Acceso al Panel de Administración
+
+## 🔒 Acceso al Panel de Administración
 - El panel se encuentra en:<br>
     */admin*
 
 ## 📬 Contacto
     Este proyecto fue desarrollado por Kharhem Montilla como página oficial para el grupo vocal New Name.
-
-    Si deseas ampliar este proyecto o conectarlo con Firebase / versión móvil / Vercel / hosting, dime y te ayudo encantado.
 
 ## 🎤 Agradecimientos
     Gracias a New Name por permitir el desarrollo de su sitio web oficial.
